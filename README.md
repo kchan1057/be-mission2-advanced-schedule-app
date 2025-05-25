@@ -1,7 +1,7 @@
 ### API 명세서
 | 기능       | Method | URL                            | Request Body / Query                                                              | Response                | HTTP Status |
 | -------- | ------ | ------------------------------ | --------------------------------------------------------------------------------- | ----------------------- | ----------- |
-| 일정 등록    | POST   | `/schedules`                   | `{ "todo": "...", "writerName": "...", "writerEmail": "...", "password": "..." }` | 생성된 일정 정보               | 200 OK      |
+| 일정 등록    | POST   | `/schedules`                   | `{ "todo": "...", "writerName": "...", "writerEmail": "...", "password": "..." }` | 생성된 일정 정보               | 201 CREATED      |
 | 전체 일정 조회 | GET    | `/schedules?page=1&size=10`    | `page`, `size` (쿼리 파라미터)                                                          | `[ScheduleResponseDto]` | 200 OK      |
 | 단건 일정 조회 | GET    | `/schedules/{id}`              | Path Variable (`id`)                                                              | 일정 1건 정보                | 200 OK      |
 | 일정 내용 수정 | PATCH  | `/schedules/{id}/todo`         | 쿼리: `?todo=...&password=...`                                                      | 수정된 일정 정보               | 200 OK      |
