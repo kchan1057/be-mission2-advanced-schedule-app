@@ -30,7 +30,7 @@ public class WriterService {
 
     public Writer getWriter(Long id) {
         return writerRepository.findById(id)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "작성자 ID를 찾을 수 없습니다."));
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Does not exist id = " + id));
     }
 
 }
