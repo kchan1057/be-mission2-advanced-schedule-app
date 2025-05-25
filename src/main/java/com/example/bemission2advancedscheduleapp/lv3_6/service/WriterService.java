@@ -19,13 +19,7 @@ public class WriterService {
 
     public Writer getOrCreateWriter(String name, String email) {
         return writerRepository.findByNameAndEmail(name, email)
-                .orElseGet(() -> writerRepository.save(new Writer(
-                        null,
-                        name,
-                        email,
-                        LocalDateTime.now(),
-                        LocalDateTime.now()
-                )));
+                .orElseGet(() -> writerRepository.save(new Writer(null,name,email,LocalDateTime.now(),LocalDateTime.now())));
     }
 
     public Writer getWriter(Long id) {
